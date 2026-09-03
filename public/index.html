@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>죽음문해력커넥트 · Death Literacy Connect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="죽음을 두렵지 않게, 삶을 또렷하게. 데스롭지 않은 이야기를 만드는 죽음문해력커넥트입니다.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="죽음문해력커넥트 · Death Literacy Connect">
+<meta property="og:description" content="데스(Death)롭지 않은 이야기. 죽음을 두렵지 않게, 삶을 또렷하게.">
+<meta property="og:image" content="/dlc-seal.png">
+<meta property="og:url" content="https://death-literacy-connect.kr">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="/dsym-black.png">
+<link rel="apple-touch-icon" href="/dsym-black.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000;
+    --paper:#fefefe;
+    --sky:#2cb8db;
+    --sun:#e1d973;
+    --mut:rgba(0,0,0,.6);
+    --line:rgba(0,0,0,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:rgba(254,254,254,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  nav .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-family:'Noto Serif KR',serif}
+  nav .brand img{width:28px;height:28px}
+  nav .brand small{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--mut);letter-spacing:1.5px;font-size:11px}
+  nav .links{display:flex;gap:20px;font-size:14px;color:var(--mut)}
+  nav .links a:hover{color:var(--ink)}
+  @media (max-width:640px){nav .links{display:none}}
+
+  /* HERO */
+  .hero{padding:96px 0 80px;text-align:center}
+  .hero .seal{width:220px;height:220px;margin:0 auto 32px;display:block}
+  .hero .kicker{font-family:'Cormorant Garamond',serif;letter-spacing:8px;font-size:14px;color:var(--mut);text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(36px,6vw,64px);letter-spacing:-.5px;line-height:1.2;margin-bottom:24px}
+  .hero h1 .highlight{background:linear-gradient(transparent 60%,var(--sun) 60%);padding:0 6px}
+  .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:640px;margin:0 auto;line-height:1.75}
+  @media (max-width:640px){.hero{padding:60px 0 60px}.hero .seal{width:160px;height:160px;margin-bottom:24px}}
+
+  /* SECTIONS */
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  section h2{font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  section .sub{color:var(--mut);margin-bottom:40px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media (max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+  .card .num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--sky);margin-bottom:12px;line-height:1}
+  .card h3{font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px;margin-bottom:10px}
+  .card p{color:var(--mut);font-size:14px;line-height:1.7}
+
+  /* CONNECT */
+  .connect{background:var(--ink);color:var(--paper);border-top:none}
+  .connect h2{color:var(--paper)}
+  .connect .sub{color:rgba(255,255,255,.6)}
+  .connect .row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font-size:15px;font-weight:500;border:1px solid rgba(255,255,255,.2);transition:.2s}
+  .btn:hover{border-color:var(--sky);color:var(--sky)}
+  .btn.primary{background:var(--sky);color:var(--ink);border-color:var(--sky)}
+  .btn.primary:hover{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+
+  /* FOOTER */
+  footer{padding:40px 0 60px;text-align:center;color:var(--mut);font-size:13px}
+  footer .fbrand{font-family:'Cormorant Garamond',serif;letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/dsym-black.png" alt="DLC">
+      <div>죽음문해력커넥트 <small>DEATH LITERACY CONNECT</small></div>
+    </a>
+    <div class="links">
+      <a href="#about">소개</a>
+      <a href="#pillars">우리가 하는 일</a>
+      <a href="#connect">함께하기</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img src="/dlc-seal.svg" alt="죽음문해력커넥트 봉인 로고" class="seal">
+    <div class="kicker">Death Literacy Connect</div>
+    <h1>데스<span class="highlight">(Death)</span>롭지 않은 이야기</h1>
+    <p class="lead">
+      죽음은 두렵지 않아야 삶이 또렷해집니다.<br>
+      죽음문해력커넥트는 개인·가족·사회가 죽음을 미리 이야기하고<br>
+      존엄하게 마주할 수 있도록 돕는 커넥터입니다.
+    </p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>왜 죽음문해력인가</h2>
+    <p class="sub">Death Literacy — 죽음을 이해하고, 준비하고, 이야기할 수 있는 능력.</p>
+    <p style="max-width:720px;color:var(--mut);font-size:16px;line-height:1.9">
+      한국은 세계에서 가장 빠르게 늙어가고 있습니다. 그런데도 우리는 죽음에 대해 배우지도, 말하지도 않습니다.
+      정보가 없어 오해가 남고, 준비가 없어 후회가 남고, 대화가 없어 죄책감이 남습니다.
+      죽음문해력커넥트는 콘텐츠·교육·커뮤니티·정책이 흩어져 있는 이 영역을 잇고,
+      죽음을 "데스롭지 않게" 다루는 언어와 도구를 만들어갑니다.
+    </p>
+  </div>
+</section>
+
+<section id="pillars">
+  <div class="wrap">
+    <h2>우리가 하는 일</h2>
+    <p class="sub">개인의 준비부터 사회 시스템까지, 네 갈래로 잇습니다.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>배움</h3>
+        <p>죽음문해력 교육 콘텐츠·강연·워크숍. 유언장 쓰기, 사전연명의료의향서, 상실 대화법.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>이야기</h3>
+        <p>인스타툰·카드뉴스·에세이로 죽음을 "데스롭지 않게" 풀어내는 공감형 콘텐츠.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>연결</h3>
+        <p>연구자·의료진·재단·활동가·유가족을 잇는 커뮤니티와 협력 네트워크.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="connect" class="connect">
+  <div class="wrap">
+    <h2>함께하기</h2>
+    <p class="sub">협력 제안·강연·언론·자원봉사 문의를 기다립니다.</p>
+    <div class="row">
+      <a class="btn primary" href="mailto:hello@death-literacy-connect.kr">협력 문의 이메일</a>
+      <a class="btn" href="https://instagram.com/deathliteracy_connect" target="_blank" rel="noopener">인스타그램 @deathliteracy_connect</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Death Literacy Connect</div>
+    <div>© 2026 죽음문해력커넥트. 아산프론티어아카데미 15기 4조 프로젝트로 시작되었습니다.</div>
+  </div>
+</footer>
+
+</body>
+</html>
