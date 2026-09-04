@@ -1,0 +1,49 @@
+/* 데스티벌 신청 폼 — 모달/단독페이지 공용 */
+.dlc-form{max-width:520px;margin:0 auto}
+.dlc-form .f{margin-bottom:22px}
+.dlc-form label{display:block;font-size:14px;font-weight:800;margin-bottom:8px}
+.dlc-form label .req{color:var(--sky);margin-left:4px}
+.dlc-form input[type=text],
+.dlc-form input[type=tel],
+.dlc-form input[type=email]{
+  width:100%;padding:16px 18px;border:1.5px solid rgba(0,0,0,.15);border-radius:14px;
+  font-size:16px;font-family:inherit;font-weight:500;background:var(--paper);color:var(--ink)
+}
+.dlc-form input:focus{outline:none;border-color:var(--ink)}
+.dlc-form .picks{display:grid;gap:10px}
+.dlc-form .pick{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border:1.5px solid rgba(0,0,0,.15);border-radius:14px;cursor:pointer}
+.dlc-form .pick:has(input:checked){border-color:var(--ink);background:rgba(44,184,219,.09)}
+.dlc-form .pick input{margin-top:3px;width:18px;height:18px;accent-color:var(--ink);flex:none}
+.dlc-form .pick > span:not(.t):not(.d){display:block;flex:1}
+.dlc-form .pick .t{display:block;font-size:15px;font-weight:800}
+.dlc-form .pick .d{display:block;font-size:13px;color:rgba(0,0,0,.55);margin-top:3px;line-height:1.55}
+.dlc-form .agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(0,0,0,.65)}
+.dlc-form .agree input{margin-top:2px;width:16px;height:16px;accent-color:var(--ink);flex:none}
+.dlc-form .agree a{text-decoration:underline}
+.dlc-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.dlc-form .submit{width:100%;margin-top:8px}
+.dlc-form .msg{margin-top:14px;font-size:14px;font-weight:700;min-height:20px}
+.dlc-form .msg.err{color:#c0392b}
+.dlc-form .done{text-align:center;padding:32px 0}
+.dlc-form .done .big{font-size:28px;font-weight:900;margin-bottom:12px}
+.dlc-form .done .sm{font-size:15px;color:rgba(0,0,0,.6);line-height:1.7}
+
+/* 모달 */
+.dlc-modal{position:fixed;inset:0;z-index:100;display:none}
+.dlc-modal.on{display:block}
+.dlc-modal .veil{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px)}
+.dlc-modal .sheet{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 64px);overflow:auto;
+  background:var(--paper);border-radius:24px;padding:40px 32px 32px
+}
+.dlc-modal .x{position:absolute;right:18px;top:18px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.06);font-size:18px;cursor:pointer;font-family:inherit}
+.dlc-modal h3{font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.dlc-modal .lead{font-size:14px;color:rgba(0,0,0,.55);margin-bottom:28px}
+@media (max-width:640px){
+  .dlc-modal .sheet{top:auto;bottom:0;transform:translateX(-50%);width:100vw;max-height:92vh;border-radius:24px 24px 0 0;padding:32px 20px 24px}
+}
+
+.dlc-form .feenote{margin:-8px 0 22px;padding:16px 18px;border-radius:14px;background:rgba(225,217,115,.28);border:1.5px solid rgba(0,0,0,.12);font-size:13.5px;line-height:1.7;color:rgba(0,0,0,.78)}
+.dlc-form .feenote[hidden]{display:none}
+.dlc-form .pick .d b{font-weight:800;color:var(--ink)}

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>데스티벌 2026 · 죽음문해력커넥트</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="10월 23·24일, 죽음 얘기하는 사람들 다 모이는 이틀. 온라인 학술 포럼 + 서촌 북성재 오프라인 축제.">
+<meta name="theme-color" content="#2CB8DB">
+<meta property="og:title" content="데스티벌 2026 · 10.23–24">
+<meta property="og:description" content="씹고 뜯고 맛보고 즐기는, 데스티벌. 데스(Death)롭지 않은 이야기.">
+<meta property="og:image" content="/deathtival-poster.png">
+<meta property="og:url" content="https://death-literacy-connect.kr/deathtival">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="/dsym-black.png">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/apply.css">
+<style>
+  /* 포스터 톤: 하늘 배경 · 검정 알약 배지 · 노란 포인트 · Gmarket Sans 타이포 */
+  .gm{font-family:'GmarketSans','Pretendard Variable',sans-serif}
+  .top{background:var(--sky);padding:56px 0 72px;position:relative;overflow:hidden}
+  .top .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .top .poster{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.22)}
+  .top h1{font-size:clamp(40px,6.4vw,78px);font-weight:800;letter-spacing:-2px;line-height:1.06;margin-bottom:18px}
+  .top .slogan{font-size:clamp(15px,1.8vw,19px);font-weight:700;color:rgba(0,0,0,.72);line-height:1.7;margin-bottom:28px}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .pill{background:#2b2523;color:#fff;border-radius:999px;padding:11px 22px;font-size:clamp(15px,1.7vw,19px);font-weight:700}
+  .top .btn.sun{background:var(--sun);color:var(--ink)}
+  .top .btn.line{background:transparent;border:2px solid var(--ink)}
+  @media(max-width:900px){.top .grid{grid-template-columns:1fr;gap:32px}.top .poster{order:-1;max-width:420px;margin:0 auto}}
+
+  .days{padding:80px 0;background:var(--paper)}
+  .day{border:1.5px solid rgba(0,0,0,.12);border-radius:24px;padding:38px 32px;margin-bottom:26px;background:#fff}
+  .day.online{background:rgba(44,184,219,.10);border-color:rgba(44,184,219,.4)}
+  .day.offline{background:rgba(225,217,115,.16);border-color:rgba(225,217,115,.62)}
+  .badge{display:inline-block;background:var(--sun);color:var(--ink);font-size:13px;font-weight:800;letter-spacing:1.5px;padding:8px 16px;border-radius:999px;margin-bottom:18px}
+  .day.offline .badge{background:var(--sky)}
+  .day h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-1.4px;margin-bottom:12px}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;font-weight:700;color:rgba(0,0,0,.72);margin-bottom:8px}
+  .facts b{font-weight:800}
+  .who{font-size:13.5px;color:rgba(0,0,0,.58);line-height:1.7;margin-bottom:18px}
+  .hook{font-size:clamp(17px,2vw,21px);font-weight:800;letter-spacing:-.5px;margin-bottom:26px}
+  .fee{display:inline-flex;align-items:center;gap:8px;background:#2b2523;color:#fff;border-radius:12px;padding:10px 16px;font-size:14px;font-weight:700;margin-bottom:24px}
+  .fee small{font-weight:500;opacity:.75}
+  .day ul{list-style:none;border-top:1px solid rgba(0,0,0,.13)}
+  .day li{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.13)}
+  .day li.rest{padding:10px 0;opacity:.5;font-size:13px;font-weight:700;justify-content:center}
+  .day li .t{font-size:15px;font-weight:800;line-height:1.45}
+  .day li .s{font-size:13px;color:rgba(0,0,0,.58);margin-top:4px;line-height:1.6}
+  .day li .a{font-size:14px;font-weight:800;color:rgba(0,0,0,.42);flex:none}
+  .booths{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:6px}
+  .booth{background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:16px;padding:20px}
+  .booth .e{font-size:26px;margin-bottom:8px}
+  .booth .t{font-size:15.5px;font-weight:800;margin-bottom:6px}
+  .booth .s{font-size:13px;color:rgba(0,0,0,.58);line-height:1.65}
+  .go{margin-top:28px}
+  .go .btn{width:100%}
+  @media(min-width:860px){.go .btn{width:auto;min-width:300px}}
+
+  .partners{padding:66px 0;background:var(--paper);border-top:1px solid rgba(0,0,0,.08)}
+  .partners .eyebrow{font-size:12px;font-weight:800;letter-spacing:4px;color:rgba(0,0,0,.42);margin-bottom:10px}
+  .partners h2{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-1px;margin-bottom:28px}
+  .logos{display:flex;flex-wrap:wrap;gap:18px}
+  .logo{width:170px;height:84px;display:flex;align-items:center;justify-content:center;
+        background:#fff;border:1.5px solid rgba(0,0,0,.09);border-radius:14px;padding:14px}
+  .logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+            filter:grayscale(1);opacity:.78;transition:.15s}
+  .logo:hover img{filter:none;opacity:1}
+  @media(max-width:640px){.logo{width:calc(50% - 9px);height:76px}}
+  .partners .note{margin-top:26px;font-size:13.5px;color:rgba(0,0,0,.55);line-height:1.75}
+  .partners .note a{text-decoration:underline;font-weight:700}
+
+  .band{background:var(--ink);color:var(--paper);padding:76px 0;text-align:center}
+  .band h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.4px;margin-bottom:12px}
+  .band h2 .sun{background:var(--sun);color:var(--ink);padding:0 10px;border-radius:6px;display:inline-block}
+  .band p{font-size:15px;color:rgba(255,255,255,.62);margin-bottom:30px;line-height:1.7}
+  .band .btn.sun{background:var(--sun);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo-kr.png" alt="죽음문해력커넥트"></a>
+    <div class="tabs"><a href="/">홈</a><a class="on" href="/deathtival">데스티벌</a></div>
+    <a class="cta" href="#" data-apply="">신청하기 →</a>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap grid">
+    <div>
+      <h1 class="gm">씹고 뜯고<br>맛보는 이틀.</h1>
+      <div class="slogan">죽음을 두렵지 않게, 삶을 또렷하게.<br>사람과 데이터, 정보를 잇습니다.</div>
+      <div class="pills">
+        <span class="pill gm">2026.10.23-24</span>
+        <span class="pill gm">북성재_서촌</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn sun" href="#" data-apply="">자리 잡기 →</a>
+        <a class="btn line" href="#program">프로그램 보기</a>
+      </div>
+    </div>
+    <div class="poster"><img src="/deathtival-poster.png" alt="데스티벌 2026 포스터"></div>
+  </div>
+</header>
+
+<section class="days" id="program">
+  <div class="wrap">
+
+    <div class="day online">
+      <div class="badge">DAY 1 · 10.23 FRI · ONLINE</div>
+      <h2 class="gm">데스 커넥터즈 토크</h2>
+      <div class="facts"><span><b>10:00 – 12:30</b></span><span>Zoom 웨비나</span><span>컨퍼런스 &amp; 강연</span></div>
+      <div class="who">돌봄과 임종, 사별 등 죽음 관련 전문가 및 소셜섹터 종사자 · <b>죽음문해력과 죽음 준비에 관심이 있는 누구나</b></div>
+      <div class="hook">“죽음을 다루는 사람들이 다 모였다.”</div>
+      <div class="fee">참가비 10,000원 <small>· 참가비는 K-DLI 연구에 쓰입니다 · 다음 날 오프라인 무료 참여</small></div>
+      <ul>
+        <li><div><div class="t">OPENING · 우리는 왜 지금 죽음문해력을 이야기하는가</div><div class="s">유은실 대표원장 · 서울36의원 / 죽음문해력커넥트 자문위원장</div></div><div class="a">5′</div></li>
+        <li><div><div class="t">SESSION 1 이해하다 · 죽음을 알고 말하고 행동하는 힘</div><div class="s">이소라 교수 · La Trobe University 공중보건대학 / 자문위원</div></div><div class="a">35′</div></li>
+        <li class="rest">휴식 10분</li>
+        <li><div><div class="t">SESSION 2 바라보다 · 선택하는 죽음</div><div class="s">한국인은 삶의 마지막을 어떻게 준비하는가 — 하정화 교수 · 서울대 사회복지학과 / 자문위원</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · 준비하는 죽음</div><div class="s">잘 죽기 위해 우리는 무엇을 배우고 있는가 — 강원남 소장 · 행복한죽음 웰다잉연구소</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · 남겨진 사람의 죽음</div><div class="s">죽음 이후에도 삶은 계속된다 — 손영순 까리따스 수녀 · 모현호스피스</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · 측정하는 죽음</div><div class="s">한국의 죽음문해력은 어디쯤 와 있을까 — 윤은남 · 죽음문해력커넥트</div></div><div class="a">10′</div></li>
+        <li class="rest">휴식 10분</li>
+        <li><div><div class="t">SESSION 3 연결하다 · 세대가 다르면, 죽음도 다를까</div><div class="s">2030 × 5060 데스커넥트 — 모더레이터 김영아 / 2030 신아베 / 5060 박진옥 · (사)나눔과나눔</div></div><div class="a">30′</div></li>
+        <li><div><div class="t">질의응답 · 죽음문해력에 대한 당신의 질문을 꺼내주세요</div></div><div class="a">25′</div></li>
+      </ul>
+      <div class="go"><a class="btn dark" href="#" data-apply="10/23(금) 온라인 · 데스 커넥터즈 토크">10.23 온라인 신청 →</a></div>
+    </div>
+
+    <div class="day offline">
+      <div class="badge">DAY 2 · 10.24 SAT · OFFLINE</div>
+      <h2 class="gm">Dive in Death</h2>
+      <div class="facts"><span><b>14:00 – 19:00</b></span><span>서촌 북성재</span><span>체험 &amp; 페스티벌</span></div>
+      <div class="who">서울특별시 종로구 필운대로7길 19 · 일반 대중, 서촌 주민, 죽음 관련 전문가 및 소셜섹터 종사자 누구나</div>
+      <div class="hook">‘죽음’, 이렇게 얘기해도 되는 건가? 오늘만큼은 남녀노소 다 함께.</div>
+      <div class="fee">참가비 무료 <small>· 일부 프로그램은 재료비가 있을 수 있어요</small></div>
+      <div class="booths">
+        <div class="booth"><div class="e">✍️</div><div class="t">묘비명 백일장</div><div class="s">책에서 본 구절, 좋아하는 명언, 기억되고 싶은 상… 내 묘비명에 남기고 싶은 한 줄이 있나요?</div></div>
+        <div class="booth"><div class="e">⚰️</div><div class="t">키꾸, 볼꾸, 다음은 관꾸</div><div class="s">내가 만약 관에 들어간다면? 취향대로 꾸며보는 나만의 관!</div></div>
+        <div class="booth"><div class="e">📷</div><div class="t">영정네컷</div><div class="s">영정사진도 네컷으로. 마지막으로 기억되고 싶은 내 모습 찍어보기</div></div>
+        <div class="booth"><div class="e">🧒</div><div class="t">“엄마, 죽는 게 뭐야?”</div><div class="s">어린이와 함께하는 동화책 큐레이션</div></div>
+        <div class="booth"><div class="e">☕</div><div class="t">북토크</div><div class="s">&lt;혼자 죽는 사회&gt; 저자 송인주 박사와 함께하는 북토크 시간</div></div>
+        <div class="booth"><div class="e">🎵</div><div class="t">One Last BGM</div><div class="s">흘러나오는 이 음악, 뭔데 이렇게 다 좋지? 내 장례식장에서 재생됐으면 싶은 음악을 물었다.</div></div>
+      </div>
+      <div class="go"><a class="btn dark" href="#" data-apply="10/24(토) 오프라인 · Dive in Death">10.24 오프라인 신청 →</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="partners">
+  <div class="wrap">
+    <div class="eyebrow">PARTNERS</div>
+    <h2>함께 잇는 기관들</h2>
+    <div class="logos">
+      <div class="logo"><img src="/partners/ssrolab-logo.png" alt="스스로랩"></div>
+      <div class="logo"><img src="/partners/goodnanum-logo.png" alt="나눔과나눔"></div>
+      <div class="logo"><img src="/partners/mangohada-logo.png" alt="망고하다"></div>
+      <div class="logo"><img src="/partners/welldying-logo.jpg" alt="행복한죽음 웰다잉연구소"></div>
+      <div class="logo"><img src="/partners/mohyun-logo.png" alt="모현가정호스피스"></div>
+    </div>
+    <div class="note">
+      데스(Death)롭지 않은 이야기를 함께할 파트너를 찾고 있어요.<br>
+      포스터·온라인 플랫폼 로고 노출 · 인스타그램 파트너 소개 · 현장 부스 운영 · 아카이브 콘텐츠 제작까지 함께합니다.
+      <a href="mailto:the.last.hello15@gmail.com">협력 문의하기 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>자리, <span class="sun">잡으셨나요?</span></h2>
+    <p>이름·연락처만 있으면 끝. 1분이면 됩니다.</p>
+    <a class="btn sun" href="#" data-apply="">데스티벌 신청하기 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>죽음문해력커넥트 · 데스(Death)롭지 않은 이야기</div>
+    <div><a href="/privacy">개인정보 처리방침</a> · <a href="https://instagram.com/deathliteracy_connect">@deathliteracy_connect</a></div>
+  </div>
+</footer>
+
+<div class="dlc-modal" role="dialog" aria-modal="true" aria-label="데스티벌 참여신청">
+  <div class="veil"></div>
+  <div class="sheet">
+    <button class="x" aria-label="닫기">✕</button>
+    <h3>데스티벌 자리 잡기</h3>
+    <div class="lead">10.23 온라인(10,000원) · 10.24 오프라인(무료)</div>
+    <div class="body"></div>
+  </div>
+</div>
+
+<script src="/apply.js"></script>
+</body>
+</html>

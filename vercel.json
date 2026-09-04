@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "public": true
+  "public": true,
+  "redirects": [
+    { "source": "/deathival", "destination": "/deathtival", "permanent": true },
+    { "source": "/deathival/:path*", "destination": "/deathtival/:path*", "permanent": true },
+    { "source": "/apply", "destination": "/deathtival/apply", "permanent": false },
+    { "source": "/신청", "destination": "/deathtival/apply", "permanent": false }
+  ]
 }
