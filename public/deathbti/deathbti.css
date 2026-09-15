@@ -1,0 +1,92 @@
+/* 죽BTI 진단 — base.css 토큰 사용 */
+.dbti{min-height:calc(100vh - 64px);display:flex;flex-direction:column}
+.dbti .wrap{width:100%}
+
+/* 공통 스텝 */
+.step{display:none;padding:56px 0 96px}
+.step.on{display:block}
+
+/* ── 인트로 ── */
+.intro{text-align:center}
+.intro .eyebrow{font-size:14px;font-weight:800;letter-spacing:.12em;color:var(--sky);margin-bottom:18px}
+.intro h1{font-size:clamp(44px,9vw,86px);font-weight:900;line-height:1.06;letter-spacing:-.04em}
+.intro .lead{margin-top:22px;font-size:clamp(18px,3.4vw,26px);font-weight:600;line-height:1.5;color:rgba(0,0,0,.72)}
+.intro .grid{margin:44px auto 0;max-width:760px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.intro .grid img{width:100%;aspect-ratio:1;object-fit:cover;object-position:center 30%;border-radius:50%;border:3px solid rgba(0,0,0,.08)}
+.intro .meta{margin-top:36px;font-size:15px;color:rgba(0,0,0,.5)}
+.intro .safe{margin:30px auto 0;max-width:560px;padding:18px 22px;background:rgba(44,184,219,.1);
+  border-radius:16px;font-size:15px;line-height:1.6;color:rgba(0,0,0,.68)}
+.intro .go{margin-top:38px}
+@media(max-width:640px){.intro .grid{grid-template-columns:repeat(4,1fr);gap:8px}}
+
+/* ── 문항 ── */
+.qhead{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.qhead .cnt{font-size:14px;font-weight:800;color:rgba(0,0,0,.45);letter-spacing:.04em}
+.qfoot{margin-top:28px;display:flex;justify-content:center}
+.qfoot .back{font-size:15px;font-weight:700;color:rgba(0,0,0,.42);background:none;border:none;
+  cursor:pointer;font-family:inherit;padding:12px 20px;border-radius:999px}
+.qfoot .back:hover{color:var(--ink);background:rgba(0,0,0,.05)}
+.bar{height:5px;background:rgba(0,0,0,.08);border-radius:99px;overflow:hidden;margin-bottom:40px}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:99px;transition:width .3s ease}
+.qbox{max-width:720px;margin:0 auto}
+.qbox h2{font-size:clamp(24px,4.6vw,38px);font-weight:800;line-height:1.34;letter-spacing:-.03em;margin-bottom:32px}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{text-align:left;width:100%;padding:22px 24px;border:2px solid rgba(0,0,0,.12);border-radius:18px;
+  background:var(--paper);font-family:inherit;font-size:clamp(16px,2.7vw,19px);font-weight:600;
+  line-height:1.45;letter-spacing:-.02em;cursor:pointer;transition:all .14s ease;color:var(--ink)}
+.opt:hover{border-color:var(--ink);transform:translateY(-1px)}
+.opt.sel{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
+/* ── 결과 ── */
+.res{text-align:center}
+.res .card{max-width:460px;margin:0 auto;border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16)}
+.res .card img{width:100%}
+.res .sub{margin:28px auto 0;max-width:600px;font-size:17px;line-height:1.6;color:rgba(0,0,0,.62)}
+.res .sub b{color:var(--ink)}
+.cta-family{margin:44px auto 0;max-width:600px;padding:34px 30px;background:var(--sky);color:var(--paper);border-radius:24px}
+.cta-family .h{font-size:clamp(26px,5vw,38px);font-weight:900;letter-spacing:-.035em;line-height:1.2}
+.cta-family .p{margin-top:14px;font-size:16px;line-height:1.6;opacity:.94}
+.cta-family .quote{margin-top:20px;padding:18px 20px;background:rgba(0,0,0,.2);border-radius:16px;
+  font-size:clamp(17px,3.2vw,21px);font-weight:800;line-height:1.4}
+.cta-family .btns{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cta-family .btns button{padding:15px 26px;border-radius:999px;border:none;cursor:pointer;font-family:inherit;
+  font-size:15px;font-weight:800;background:var(--paper);color:var(--ink)}
+.cta-family .btns button.ghost{background:transparent;color:var(--paper);border:2px solid rgba(255,255,255,.6)}
+.res .again{margin-top:30px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.res .again button,.res .again a{padding:14px 24px;border-radius:999px;border:2px solid rgba(0,0,0,.15);
+  background:none;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;color:var(--ink)}
+.res .again a{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);opacity:0;
+  background:var(--ink);color:var(--paper);padding:14px 24px;border-radius:999px;font-size:15px;
+  font-weight:700;pointer-events:none;transition:all .25s ease;z-index:60}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── 공유 수신 화면 (/deathbti/t/N) ── */
+.share-view .shared-by{font-size:15px;font-weight:700;color:rgba(0,0,0,.45);margin-bottom:20px}
+.share-view .turn-line{margin:16px auto 0;max-width:600px;font-size:19px;line-height:1.6;
+  font-weight:600;color:rgba(0,0,0,.75)}
+.cta-family .mainbtn{display:inline-block;padding:18px 36px;border-radius:999px;background:var(--paper);
+  color:var(--ink);font-size:18px;font-weight:800}
+.cta-family .stat{margin-top:18px;font-size:14px;opacity:.85}
+
+/* ── 결과 화면 보강 ── */
+.res .rarity{margin:22px auto 0;display:inline-block;padding:10px 20px;border-radius:999px;
+  background:var(--sun);font-size:15px;font-weight:800;letter-spacing:-.02em}
+.res .sub{margin-top:16px}
+.opposite{margin:36px auto 0;max-width:600px;padding:26px 24px;border:2px dashed rgba(0,0,0,.16);
+  border-radius:20px;text-align:center}
+.opposite .lbl{font-size:14px;font-weight:800;color:rgba(0,0,0,.45);letter-spacing:.04em}
+.opposite .who{margin-top:10px;font-size:22px;font-weight:800;letter-spacing:-.03em}
+.opposite .why{margin-top:8px;font-size:15px;line-height:1.55;color:rgba(0,0,0,.6)}
+.opposite button{margin-top:16px;padding:13px 24px;border-radius:999px;border:2px solid var(--ink);
+  background:none;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;color:var(--ink)}
+.opposite button:hover{background:var(--ink);color:var(--paper)}
+.intro .meta #introStat{display:block;margin-top:8px;font-weight:700;color:var(--sky)}
+
+/* ── 유형 묘사 (결과·공유 공통) ── */
+.desc{max-width:620px;margin:34px auto 0;text-align:left}
+.desc p{font-size:18px;line-height:1.78;letter-spacing:-.02em;color:rgba(0,0,0,.82);
+  margin-bottom:18px}
+.desc p:last-child{margin-bottom:0}
+.desc p:last-child{padding-top:18px;border-top:1px solid rgba(0,0,0,.1);font-weight:600;color:var(--ink)}
+@media(max-width:640px){.desc p{font-size:17px;line-height:1.72}}

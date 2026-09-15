@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Death Literacy Connect · Korea</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A story that makes death less daunting. Korea's first Death Literacy Index (K-DLI) and Deathtival 2026, by Death Literacy Connect.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Death Literacy Connect · Korea">
+<meta property="og:description" content="A story that makes death less daunting. Building Korea's first Death Literacy Index.">
+<meta property="og:image" content="/logo-dsym-sun.png">
+<meta property="og:url" content="https://death-literacy-connect.kr/en">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ko" href="https://death-literacy-connect.kr/">
+<link rel="alternate" hreflang="en" href="https://death-literacy-connect.kr/en">
+<link rel="alternate" hreflang="x-default" href="https://death-literacy-connect.kr/">
+<link rel="icon" type="image/png" href="/dsym-black.png">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="/base.css">
+<style>
+  .hero{padding:104px 0 120px}
+  .hero .kicker{font-size:12px;font-weight:800;letter-spacing:5px;color:rgba(0,0,0,.5);margin-bottom:30px}
+  .hero .kicker .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sky);vertical-align:middle;margin:-2px 12px 0 0}
+  .hero h1{font-weight:900;font-size:clamp(38px,6.4vw,82px);letter-spacing:-2.6px;line-height:1.06;margin-bottom:34px;max-width:15ch;position:relative;z-index:2}
+  .hero h1 .sun{background:var(--sun);padding:0 12px;border-radius:6px;display:inline-block;transform:rotate(-1deg)}
+  .hero .sub{font-size:clamp(18px,2.2vw,25px);font-weight:700;letter-spacing:-.4px;margin-bottom:14px}
+  .hero .sub2{font-size:clamp(15px,1.6vw,17px);font-weight:500;color:rgba(0,0,0,.62);max-width:620px;margin-bottom:46px;line-height:1.75}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:13px}
+  .hero .dsym-float{position:absolute;right:-80px;top:90px;width:340px;opacity:.42;pointer-events:none;transform:rotate(6deg);z-index:1}
+  @media(max-width:1000px){.hero .dsym-float{display:none}}
+
+  section{padding:82px 0}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:4px;color:rgba(0,0,0,.45);margin-bottom:12px}
+  h2.big{font-size:clamp(28px,4.2vw,46px);font-weight:900;letter-spacing:-1.6px;line-height:1.15;margin-bottom:16px}
+  h2.big .sky{color:var(--sky)}
+  .lead{font-size:16px;color:rgba(0,0,0,.62);line-height:1.8;max-width:720px;margin-bottom:40px}
+
+  .why{background:var(--ink);color:var(--paper)}
+  .why .eyebrow{color:var(--sun)}
+  .why .lead{color:rgba(255,255,255,.66)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .stat{border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:32px 28px}
+  .stat .n{font-size:clamp(38px,5vw,56px);font-weight:900;letter-spacing:-2px;color:var(--sky);line-height:1;margin-bottom:14px}
+  .stat .t{font-size:16px;font-weight:800;margin-bottom:8px}
+  .stat .d{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.7}
+
+  .dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .dim{border:1.5px solid rgba(0,0,0,.12);border-radius:20px;padding:28px 26px}
+  .dim .i{width:30px;height:30px;border-radius:50%;background:var(--sky);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;margin-bottom:16px}
+  .dim .t{font-size:17px;font-weight:900;margin-bottom:8px}
+  .dim .d{font-size:13.5px;color:rgba(0,0,0,.6);line-height:1.7}
+  .cite{margin-top:20px;font-size:13px;color:rgba(0,0,0,.45)}
+
+  .fest{background:rgba(44,184,219,.10)}
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:30px}
+  @media(max-width:860px){.days{grid-template-columns:1fr}}
+  .day{background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:22px;padding:32px 28px}
+  .day .tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:1.6px;padding:7px 14px;border-radius:999px;background:var(--sun);margin-bottom:16px}
+  .day h3{font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}
+  .day .when{font-size:14px;font-weight:800;color:rgba(0,0,0,.75);margin-bottom:4px}
+  .day .who{font-size:13px;color:rgba(0,0,0,.55);line-height:1.65;margin-bottom:16px}
+  .day .hook{font-size:15.5px;font-weight:800;letter-spacing:-.3px;margin-bottom:18px}
+  .day ul{list-style:none;font-size:13.5px;color:rgba(0,0,0,.66);line-height:1.9}
+  .day ul li::before{content:"· ";color:var(--sky);font-weight:900}
+
+  .who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .person{border:1.5px solid rgba(0,0,0,.1);border-radius:18px;padding:24px}
+  .person .nm{font-size:17px;font-weight:900;margin-bottom:6px}
+  .person .rl{font-size:13px;color:rgba(0,0,0,.58);line-height:1.65}
+
+  .partners{border-top:1px solid rgba(0,0,0,.08)}
+  .logos{display:flex;flex-wrap:wrap;gap:16px}
+  .logo{width:168px;height:82px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid rgba(0,0,0,.09);border-radius:14px;padding:14px}
+  .logo img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.78}
+  .logo:hover img{filter:none;opacity:1}
+
+  .connect{background:var(--sky);text-align:center}
+  .connect h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-1.6px;margin-bottom:14px}
+  .connect p{font-size:15px;color:rgba(0,0,0,.68);line-height:1.8;max-width:600px;margin:0 auto 32px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/en"><img src="/logo-en.png" alt="Death Literacy Connect"></a>
+    <div class="tabs">
+      <a class="on" href="/en">About</a>
+      <a href="/en/deathtival">Deathtival</a>
+      <a href="/en/deathbti">DeathBTI</a>
+      <a href="/" title="한국어">KO</a>
+    </div>
+    <a class="cta" href="mailto:the.last.hello15@gmail.com">Get in touch →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap" style="position:relative">
+    <div class="kicker"><span class="dot"></span>DEATH LITERACY CONNECT · KOREA · 2026</div>
+    <h1>A story that makes<br>death <span class="sun">less daunting.</span></h1>
+    <div class="sub">Death can be learned.</div>
+    <div class="sub2">We are building Korea's first Death Literacy Index (K-DLI) and connecting the people, data and organisations that help Koreans talk about dying — before it is too late.</div>
+    <div class="actions">
+      <a class="btn dark" href="/en/deathtival">Deathtival 2026 · Oct 23–24 →</a>
+      <a class="btn ghost" href="#partner">Partner with us</a>
+    </div>
+    <img class="dsym-float" src="/dsym-black.png" alt="">
+  </div>
+</header>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">WHY KOREA, WHY NOW</div>
+    <h2 class="big">The society that faces the most death,<br>yet speaks of it least.</h2>
+    <div class="lead">Korea is ageing faster than any country on record. Deaths are climbing sharply — and almost no one is prepared to talk about them.</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">20%</div>
+        <div class="t">Super-aged society</div>
+        <div class="d">In 2025 people aged 65+ passed 20% of the population. Annual deaths are rising steeply.</div>
+      </div>
+      <div class="stat">
+        <div class="n">18.7%</div>
+        <div class="t">Preparation left behind</div>
+        <div class="d">Even among those aged 65+, fewer than 1 in 5 have completed an advance directive.</div>
+      </div>
+      <div class="stat">
+        <div class="n">54.3%</div>
+        <div class="t">And yet — silence</div>
+        <div class="d">More than half of Korean adults have never once talked about death with their family.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">OUR APPROACH</div>
+    <h2 class="big">Death literacy is a <span class="sky">measurable capacity</span>,<br>not a personality trait.</h2>
+    <div class="lead">The Death Literacy Index breaks the ability to face death into four dimensions. We are adapting it for the Korean context as the <b>K-DLI</b> — the country's first.</div>
+    <div class="dims">
+      <div class="dim"><div class="i">1</div><div class="t">Practical knowledge</div><div class="d">Can you hands-on handle caregiving, end-of-life care and funerals?</div></div>
+      <div class="dim"><div class="i">2</div><div class="t">Factual knowledge</div><div class="d">Can you navigate the systems — life-sustaining treatment decisions, funerals, inheritance?</div></div>
+      <div class="dim"><div class="i">3</div><div class="t">Experiential knowledge</div><div class="d">Have you learned from being close to death and grief, and can you use that learning?</div></div>
+      <div class="dim"><div class="i">4</div><div class="t">Community support</div><div class="d">Do you know where to turn, and can your community carry the load with you?</div></div>
+    </div>
+    <div class="cite">Framework: Noonan et al., Death Literacy Index (2024) · Korean adaptation in progress with La Trobe University and Hallym University Institute of Life and Death Studies.</div>
+  </div>
+</section>
+
+<section class="fest">
+  <div class="wrap">
+    <div class="eyebrow">DEATHTIVAL 2026</div>
+    <h2 class="big">Two days of talking about death —<br>out loud, and on purpose.</h2>
+    <div class="lead">Korea's death-related practitioners, researchers and creators gather for two days. One day online, one day in a traditional hanok house in Seochon, Seoul.</div>
+    <div class="days">
+      <div class="day">
+        <div class="tag">DAY 1 · OCT 23 FRI · ONLINE</div>
+        <h3>Death Connectors Talk</h3>
+        <div class="when">10:00 – 12:30 KST · Zoom webinar</div>
+        <div class="who">For practitioners and researchers in care, dying and bereavement — and anyone curious about death literacy.</div>
+        <div class="hook">"Everyone who works with death, in one room."</div>
+        <ul>
+          <li>Why death literacy, why now — Dr. Yoo Eun-sil, Advisory Chair</li>
+          <li>Understanding — Prof. Lee So-ra, La Trobe University</li>
+          <li>Looking — Prof. Ha Jeong-hwa (SNU), Kang Won-nam, Sr. Son Young-soon, Yun Eun-nam</li>
+          <li>Connecting — a cross-generational dialogue, 20s–30s × 50s–60s</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="tag">DAY 2 · OCT 24 SAT · OFFLINE</div>
+        <h3>Dive in Death</h3>
+        <div class="when">14:00 – 19:00 KST · Bukseongjae, Seochon</div>
+        <div class="who">Open to everyone — neighbours, families, practitioners.</div>
+        <div class="hook">The day death becomes play.</div>
+        <ul>
+          <li>Epitaph writing contest</li>
+          <li>Decorate your own coffin</li>
+          <li>Funeral-portrait photo booth</li>
+          <li>"Mum, what is dying?" — children's picture books</li>
+          <li>Book talk with Dr. Song In-ju, author of <i>A Society That Dies Alone</i></li>
+          <li>One Last BGM — the song for your own funeral</li>
+        </ul>
+      </div>
+    </div>
+    <a class="btn dark" href="/en/deathtival">Full programme →</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">WHO WE ARE</div>
+    <h2 class="big">The six who met at<br>the Asan Nanum Foundation.</h2>
+    <div class="lead">Death Literacy Connect is a project team from the Asan Frontier Academy (Cohort 15) — six working professionals from non-profit foundations, corporate foundations, a vocational school and a social venture.</div>
+    <div class="who-grid">
+      <div class="person"><div class="nm">Kim Young-a</div><div class="rl">CEO, Dadareuda — end-of-life community for people with developmental disabilities</div></div>
+      <div class="person"><div class="nm">Yun Eun-nam</div><div class="rl">Director, ESG Marketing, GivingPlus Foundation</div></div>
+      <div class="person"><div class="nm">Song Da-hye</div><div class="rl">CEO, Nodak Company</div></div>
+      <div class="person"><div class="nm">Shin Ave</div><div class="rl">Head of Brand Communications, The Beautiful Foundation</div></div>
+      <div class="person"><div class="nm">Song Jun-hyeok</div><div class="rl">Head of General Affairs, Haesol Vocational Academy</div></div>
+      <div class="person"><div class="nm">Shin Gi-na</div><div class="rl">Head of Brand Management, Paradise Cultural Foundation</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="wrap">
+    <div class="eyebrow">PARTNERS</div>
+    <h2 class="big">Organisations we work with.</h2>
+    <div class="logos">
+      <div class="logo"><img src="/partners/ssrolab-logo.png" alt="Ssrolab"></div>
+      <div class="logo"><img src="/partners/goodnanum-logo.png" alt="Nanum and Nanum"></div>
+      <div class="logo"><img src="/partners/mangohada-logo.png" alt="Mangohada"></div>
+      <div class="logo"><img src="/partners/welldying-logo.jpg" alt="Happy Death Well-Dying Institute"></div>
+      <div class="logo"><img src="/partners/mohyun-logo.png" alt="Mohyun Home Hospice"></div>
+    </div>
+  </div>
+</section>
+
+<section class="connect" id="partner">
+  <div class="wrap">
+    <h2>Shall we connect?</h2>
+    <p>We are looking for partners, speakers, researchers and press — in Korea and abroad. If your work touches dying, grief or end-of-life care, we would love to hear from you.</p>
+    <a class="btn dark" href="mailto:the.last.hello15@gmail.com">Email us →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Death Literacy Connect · 죽음문해력커넥트</div>
+    <div><a href="/">한국어</a> · <a href="/privacy">Privacy (KO)</a> · <a href="https://instagram.com/deathliteracy_connect">@deathliteracy_connect</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

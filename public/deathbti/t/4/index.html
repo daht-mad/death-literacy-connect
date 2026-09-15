@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>상갓집 실세 — 죽BTI</title>
+<meta name="description" content="정신 차려보면 주방에 있는 사람. 당신은 죽음 앞에서 어떤 사람인가요? 10문항으로 알아보는 죽음문해력 유형 8가지.">
+<meta property="og:title" content="나는 「상갓집 실세」 — 당신은요?">
+<meta property="og:description" content="정신 차려보면 주방에 있는 사람. 10문항 · 1분이면 나와요.">
+<meta property="og:image" content="https://death-literacy-connect.kr/deathbti/cards/type4.jpg">
+<meta property="og:url" content="https://death-literacy-connect.kr/deathbti/t/4">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://death-literacy-connect.kr/deathbti/t/4">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/deathbti/deathbti.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="/"><img src="/logo-kr.png" alt="죽음문해력커넥트"></a>
+  <div class="tabs"><a href="/">홈</a><a href="/deathtival">데스티벌</a><a class="on" href="/deathbti">죽BTI</a></div>
+  <a class="cta" href="/deathtival/apply">신청하기 →</a>
+</div></nav>
+
+<main class="dbti">
+ <section class="step on res share-view"><div class="wrap">
+  <div class="shared-by">누군가 당신에게 보냈어요 💌</div>
+  <div class="card"><img src="/deathbti/cards/type4.jpg" alt="상갓집 실세"></div>
+  <p class="sub">이 사람은 <b>상갓집 실세</b>.<br>정신 차려보면 주방에 있는 사람.</p>
+  <div class="desc"><p>분명 조문하러 갔는데 정신 차려보면 주방에 있습니다. 앞치마를 두르고, 국을 뜨고, 손님상을 봅니다.</p><p>당신은 슬플 때 가만히 있는 걸 못 견딥니다. 위로의 말을 고르는 대신 몸을 씁니다. 말보다 손이 먼저 나가는 사람이에요.</p><p>당신이 있는 자리는 늘 굴러갑니다. 다들 당신에게 기대죠. 그런데 정작 당신이 무너질 때 누가 챙기는지는 아무도 모릅니다. 오늘은 그 한 사람을 떠올려보세요.</p></div>
+
+  <div class="cta-family">
+    <div class="h">당신은<br>몇 번일까요?</div>
+    <div class="p">8가지 유형 중 하나예요.<br>10문항 · 1분이면 나와요.</div>
+    <div class="btns"><a class="mainbtn" href="/deathbti">나도 해보기 →</a></div>
+    <div class="stat" id="stat"></div>
+  </div>
+
+  <div class="again">
+    <a href="/deathtival">데스티벌 보러 가기 →</a>
+  </div>
+ </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>© 2026 죽음문해력커넥트 · 데스<span>(Death)</span>롭지 않은 이야기</div>
+  <div><a href="/privacy">개인정보 처리방침</a></div>
+</div></footer>
+<script>
+fetch('/api/deathbti-stats').then(r=>r.json()).then(d=>{
+  if(d.total>20) document.getElementById('stat').textContent = '지금까지 ' + d.total.toLocaleString() + '명이 해봤어요';
+}).catch(()=>{});
+</script>
+</body></html>

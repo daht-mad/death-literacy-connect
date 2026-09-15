@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>육개장 두 그릇 — 죽BTI</title>
+<meta name="description" content="슬픔과 배고픔을 분리하는 사람. 당신은 죽음 앞에서 어떤 사람인가요? 10문항으로 알아보는 죽음문해력 유형 8가지.">
+<meta property="og:title" content="나는 「육개장 두 그릇」 — 당신은요?">
+<meta property="og:description" content="슬픔과 배고픔을 분리하는 사람. 10문항 · 1분이면 나와요.">
+<meta property="og:image" content="https://death-literacy-connect.kr/deathbti/cards/type7.jpg">
+<meta property="og:url" content="https://death-literacy-connect.kr/deathbti/t/7">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://death-literacy-connect.kr/deathbti/t/7">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/deathbti/deathbti.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="/"><img src="/logo-kr.png" alt="죽음문해력커넥트"></a>
+  <div class="tabs"><a href="/">홈</a><a href="/deathtival">데스티벌</a><a class="on" href="/deathbti">죽BTI</a></div>
+  <a class="cta" href="/deathtival/apply">신청하기 →</a>
+</div></nav>
+
+<main class="dbti">
+ <section class="step on res share-view"><div class="wrap">
+  <div class="shared-by">누군가 당신에게 보냈어요 💌</div>
+  <div class="card"><img src="/deathbti/cards/type7.jpg" alt="육개장 두 그릇"></div>
+  <p class="sub">이 사람은 <b>육개장 두 그릇</b>.<br>슬픔과 배고픔을 분리하는 사람.</p>
+  <div class="desc"><p>슬픈 건 슬픈 거고 배고픈 건 배고픈 겁니다. 당신은 장례식장에서 육개장을 두 그릇 비웠고, 그게 이상하다고 생각하지 않습니다.</p><p>당신의 몸은 늘 사는 쪽으로 먼저 움직입니다. 울다가도 밥을 먹고, 자고, 다음 날 출근합니다. 무정해서가 아니라 그게 살아내는 방식이에요.</p><p>애도는 슬퍼하는 것보다 견디는 것에 가깝습니다. 당신은 이미 잘하고 있어요. 그 밥심을 살아있는 사람한테도 좀 쓰세요. 오늘 안부 전화 한 통이면 충분합니다.</p></div>
+
+  <div class="cta-family">
+    <div class="h">당신은<br>몇 번일까요?</div>
+    <div class="p">8가지 유형 중 하나예요.<br>10문항 · 1분이면 나와요.</div>
+    <div class="btns"><a class="mainbtn" href="/deathbti">나도 해보기 →</a></div>
+    <div class="stat" id="stat"></div>
+  </div>
+
+  <div class="again">
+    <a href="/deathtival">데스티벌 보러 가기 →</a>
+  </div>
+ </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>© 2026 죽음문해력커넥트 · 데스<span>(Death)</span>롭지 않은 이야기</div>
+  <div><a href="/privacy">개인정보 처리방침</a></div>
+</div></footer>
+<script>
+fetch('/api/deathbti-stats').then(r=>r.json()).then(d=>{
+  if(d.total>20) document.getElementById('stat').textContent = '지금까지 ' + d.total.toLocaleString() + '명이 해봤어요';
+}).catch(()=>{});
+</script>
+</body></html>

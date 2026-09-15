@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deathtival 2026 · Death Literacy Connect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Oct 23–24, 2026. Two days of talking about death out loud — an online conference and an offline festival in a Seoul hanok.">
+<meta name="theme-color" content="#2CB8DB">
+<meta property="og:title" content="Deathtival 2026 · Oct 23–24, Seoul">
+<meta property="og:description" content="Two days of talking about death — out loud, and on purpose.">
+<meta property="og:image" content="/deathtival-poster.png">
+<meta property="og:url" content="https://death-literacy-connect.kr/en/deathtival">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ko" href="https://death-literacy-connect.kr/deathtival">
+<link rel="alternate" hreflang="en" href="https://death-literacy-connect.kr/en/deathtival">
+<link rel="alternate" hreflang="x-default" href="https://death-literacy-connect.kr/deathtival">
+<link rel="icon" type="image/png" href="/dsym-black.png">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css">
+<link rel="stylesheet" href="/base.css">
+<style>
+  .gm{font-family:'GmarketSans','Pretendard Variable',sans-serif}
+  .top{background:var(--sky);padding:56px 0 72px}
+  .top .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .top .poster{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.22)}
+  .top h1{font-size:clamp(38px,6vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.08;margin-bottom:18px}
+  .top .slogan{font-size:clamp(15px,1.8vw,19px);font-weight:700;color:rgba(0,0,0,.72);line-height:1.7;margin-bottom:28px}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .pill{background:#2b2523;color:#fff;border-radius:999px;padding:11px 22px;font-size:clamp(14px,1.6vw,18px);font-weight:700}
+  .top .btn.sun{background:var(--sun);color:var(--ink)}
+  .top .btn.line{background:transparent;border:2px solid var(--ink)}
+  @media(max-width:900px){.top .grid{grid-template-columns:1fr;gap:32px}.top .poster{order:-1;max-width:420px;margin:0 auto}}
+
+  .days{padding:80px 0;background:var(--paper)}
+  .day{border:1.5px solid rgba(0,0,0,.12);border-radius:24px;padding:38px 32px;margin-bottom:26px;background:#fff}
+  .day.online{background:rgba(44,184,219,.10);border-color:rgba(44,184,219,.4)}
+  .day.offline{background:rgba(225,217,115,.16);border-color:rgba(225,217,115,.62)}
+  .badge{display:inline-block;background:var(--sun);color:var(--ink);font-size:12px;font-weight:800;letter-spacing:1.5px;padding:8px 16px;border-radius:999px;margin-bottom:18px}
+  .day.offline .badge{background:var(--sky)}
+  .day h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-1.4px;margin-bottom:12px}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;font-weight:700;color:rgba(0,0,0,.72);margin-bottom:8px}
+  .who{font-size:13.5px;color:rgba(0,0,0,.58);line-height:1.7;margin-bottom:18px}
+  .hook{font-size:clamp(16px,2vw,20px);font-weight:800;letter-spacing:-.4px;margin-bottom:26px}
+  .fee{display:inline-flex;align-items:center;gap:8px;background:#2b2523;color:#fff;border-radius:12px;padding:10px 16px;font-size:13.5px;font-weight:700;margin-bottom:24px}
+  .fee small{font-weight:500;opacity:.75}
+  .day ul{list-style:none;border-top:1px solid rgba(0,0,0,.13)}
+  .day li{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.13)}
+  .day li.rest{padding:10px 0;opacity:.5;font-size:13px;font-weight:700;justify-content:center}
+  .day li .t{font-size:15px;font-weight:800;line-height:1.45}
+  .day li .s{font-size:13px;color:rgba(0,0,0,.58);margin-top:4px;line-height:1.6}
+  .day li .a{font-size:14px;font-weight:800;color:rgba(0,0,0,.42);flex:none}
+  .booths{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:6px}
+  .booth{background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:16px;padding:20px}
+  .booth .e{font-size:26px;margin-bottom:8px}
+  .booth .t{font-size:15.5px;font-weight:800;margin-bottom:6px}
+  .booth .s{font-size:13px;color:rgba(0,0,0,.58);line-height:1.65}
+
+  .note{margin-top:30px;padding:24px 26px;border:1.5px dashed rgba(0,0,0,.2);border-radius:18px;background:rgba(44,184,219,.07);font-size:14px;line-height:1.85;color:rgba(0,0,0,.75)}
+  .note b{font-weight:800}
+  .note a{text-decoration:underline;font-weight:700}
+
+  .partners{padding:66px 0;border-top:1px solid rgba(0,0,0,.08)}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:4px;color:rgba(0,0,0,.42);margin-bottom:10px}
+  .partners h2{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-1px;margin-bottom:28px}
+  .logos{display:flex;flex-wrap:wrap;gap:16px}
+  .logo{width:168px;height:82px;display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid rgba(0,0,0,.09);border-radius:14px;padding:14px}
+  .logo img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.78}
+  .logo:hover img{filter:none;opacity:1}
+  .partners .pnote{margin-top:26px;font-size:14px;color:rgba(0,0,0,.6);line-height:1.8}
+  .partners .pnote a{text-decoration:underline;font-weight:700}
+
+  .band{background:var(--ink);color:var(--paper);padding:76px 0;text-align:center}
+  .band h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-1.4px;margin-bottom:12px}
+  .band h2 .sun{background:var(--sun);color:var(--ink);padding:0 10px;border-radius:6px;display:inline-block}
+  .band p{font-size:15px;color:rgba(255,255,255,.62);margin-bottom:30px;line-height:1.8}
+  .band .btn.sun{background:var(--sun);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/en"><img src="/logo-en.png" alt="Death Literacy Connect"></a>
+    <div class="tabs">
+      <a href="/en">About</a>
+      <a class="on" href="/en/deathtival">Deathtival</a>
+      <a href="/en/deathbti">DeathBTI</a>
+      <a href="/deathtival" title="한국어">KO</a>
+    </div>
+    <a class="cta" href="mailto:the.last.hello15@gmail.com">Get in touch →</a>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap grid">
+    <div>
+      <h1 class="gm">Two days of<br>talking about death.</h1>
+      <div class="slogan">Making death less daunting, and life clearer.<br>Connecting people, data and information.</div>
+      <div class="pills">
+        <span class="pill gm">2026.10.23-24</span>
+        <span class="pill gm">Bukseongjae, Seoul</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn sun" href="mailto:the.last.hello15@gmail.com?subject=Deathtival%202026%20enquiry">Enquire →</a>
+        <a class="btn line" href="#program">See programme</a>
+      </div>
+    </div>
+    <div class="poster"><img src="/deathtival-poster.png" alt="Deathtival 2026 poster"></div>
+  </div>
+</header>
+
+<section class="days" id="program">
+  <div class="wrap">
+
+    <div class="day online">
+      <div class="badge">DAY 1 · OCT 23 FRI · ONLINE</div>
+      <h2 class="gm">Death Connectors Talk</h2>
+      <div class="facts"><span><b>10:00 – 12:30 KST</b></span><span>Zoom webinar</span><span>Conference</span></div>
+      <div class="who">For practitioners and researchers in care, dying and bereavement, and the wider social sector — and <b>anyone interested in death literacy</b>. Sessions are conducted in Korean.</div>
+      <div class="hook">"Everyone who works with death, in one room."</div>
+      <div class="fee">KRW 10,000 <small>· proceeds fund the K-DLI research · free entry to Day 2</small></div>
+      <ul>
+        <li><div><div class="t">OPENING · Why are we talking about death literacy now?</div><div class="s">Dr. Yoo Eun-sil · Seoul 36 Clinic / Advisory Chair, Death Literacy Connect</div></div><div class="a">5′</div></li>
+        <li><div><div class="t">SESSION 1 Understanding · The power to know, speak and act on death</div><div class="s">Prof. Lee So-ra · School of Public Health, La Trobe University / Advisor</div></div><div class="a">35′</div></li>
+        <li class="rest">Break · 10 min</li>
+        <li><div><div class="t">SESSION 2 Looking · Death by choice</div><div class="s">How Koreans prepare for the end of life — Prof. Ha Jeong-hwa · Social Welfare, Seoul National University / Advisor</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · Death prepared for</div><div class="s">What are we learning in order to die well — Kang Won-nam · Happy Death Well-Dying Institute</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · Death of those left behind</div><div class="s">Life continues after death — Sr. Son Young-soon, Caritas · Mohyun Home Hospice</div></div><div class="a">20′</div></li>
+        <li><div><div class="t">SESSION 2 · Death measured</div><div class="s">Where does Korea's death literacy stand? — Yun Eun-nam · Death Literacy Connect</div></div><div class="a">10′</div></li>
+        <li class="rest">Break · 10 min</li>
+        <li><div><div class="t">SESSION 3 Connecting · If generations differ, does death differ too?</div><div class="s">20s–30s × 50s–60s — moderator Kim Young-a / Shin Ave / Park Jin-ok · Nanum and Nanum</div></div><div class="a">30′</div></li>
+        <li><div><div class="t">Q&amp;A · Bring us your questions about death literacy</div></div><div class="a">25′</div></li>
+      </ul>
+    </div>
+
+    <div class="day offline">
+      <div class="badge">DAY 2 · OCT 24 SAT · OFFLINE</div>
+      <h2 class="gm">Dive in Death</h2>
+      <div class="facts"><span><b>14:00 – 19:00 KST</b></span><span>Bukseongjae, Seochon</span><span>Festival</span></div>
+      <div class="who">19 Pirundae-ro 7-gil, Jongno-gu, Seoul — a traditional hanok house. Open to everyone: neighbours, families, practitioners.</div>
+      <div class="hook">The day death becomes play.</div>
+      <div class="fee">Free <small>· some activities may charge a small materials fee</small></div>
+      <div class="booths">
+        <div class="booth"><div class="e">✍️</div><div class="t">Epitaph contest</div><div class="s">A line from a book, a favourite saying, the way you want to be remembered — what would yours say?</div></div>
+        <div class="booth"><div class="e">⚰️</div><div class="t">Decorate your coffin</div><div class="s">If you were going into a coffin — why not decorate it your way first?</div></div>
+        <div class="booth"><div class="e">📷</div><div class="t">Funeral portrait booth</div><div class="s">Four frames for your funeral portrait. The face you want remembered.</div></div>
+        <div class="booth"><div class="e">🧒</div><div class="t">"Mum, what is dying?"</div><div class="s">A curated picture-book corner for children and grown-ups together.</div></div>
+        <div class="booth"><div class="e">☕</div><div class="t">Book talk</div><div class="s">With Dr. Song In-ju, author of <i>A Society That Dies Alone</i>.</div></div>
+        <div class="booth"><div class="e">🎵</div><div class="t">One Last BGM</div><div class="s">We asked people which song should play at their own funeral. Here is the playlist.</div></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Attending from overseas?</b><br>
+      Sessions run in Korean. Day 1 is a Zoom webinar, so you can join from anywhere — and we can arrange interpretation support or share materials in English on request.
+      If you would like to join, speak, or explore a partnership, just <a href="mailto:the.last.hello15@gmail.com?subject=Deathtival%202026%20enquiry">email us</a> and we will take it from there.
+      <br><br>
+      <span style="opacity:.7">Korean registration form: <a href="/deathtival/apply">death-literacy-connect.kr/deathtival/apply</a></span>
+    </div>
+
+  </div>
+</section>
+
+<section class="partners">
+  <div class="wrap">
+    <div class="eyebrow">PARTNERS</div>
+    <h2>Organisations we work with</h2>
+    <div class="logos">
+      <div class="logo"><img src="/partners/ssrolab-logo.png" alt="Ssrolab"></div>
+      <div class="logo"><img src="/partners/goodnanum-logo.png" alt="Nanum and Nanum"></div>
+      <div class="logo"><img src="/partners/mangohada-logo.png" alt="Mangohada"></div>
+      <div class="logo"><img src="/partners/welldying-logo.jpg" alt="Happy Death Well-Dying Institute"></div>
+      <div class="logo"><img src="/partners/mohyun-logo.png" alt="Mohyun Home Hospice"></div>
+    </div>
+    <div class="pnote">
+      We are looking for partners to make death less daunting together — logo placement on the poster and this site, a partner feature on our Instagram, a booth on the day, and joint archive content.
+      <a href="mailto:the.last.hello15@gmail.com?subject=Deathtival%20partnership">Talk to us →</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Want to <span class="sun">join us?</span></h2>
+    <p>Tell us who you are and how you'd like to take part. We reply to every message.</p>
+    <a class="btn sun" href="mailto:the.last.hello15@gmail.com?subject=Deathtival%202026%20enquiry">Email us →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Death Literacy Connect · 죽음문해력커넥트</div>
+    <div><a href="/deathtival">한국어</a> · <a href="/privacy">Privacy (KO)</a> · <a href="https://instagram.com/deathliteracy_connect">@deathliteracy_connect</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

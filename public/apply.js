@@ -23,13 +23,15 @@
       '<input id="dlc-email" name="email" type="email" autocomplete="email" placeholder="me@example.com">' +
       '<div class="d" style="font-size:12px;color:rgba(0,0,0,.5);margin-top:6px">온라인 참여 시 줌 링크를 이 주소로 보내요.</div></div>' +
       '<div class="f"><label class="agree"><input type="checkbox" name="agree">' +
-      '<span><b>개인정보 수집·이용 및 국외 이전</b>에 동의합니다.<span class="req">*</span><br>' +
+      '<span><b>개인정보 수집·이용</b>에 동의합니다.<span class="req">*</span><br>' +
       '<span style="opacity:.8">수집 항목: 이름·연락처·이메일·참여 프로그램 · 목적: 행사 운영과 안내 · ' +
-      '보유기간: 행사 종료 후 3개월 이내 파기 · 저장 위치: Airtable(미국)<br>' +
+      '보유기간: 행사 종료 후 3개월 이내 파기<br>' +
+      '동의를 거부하실 수 있으며, 거부 시 온라인 신청 접수가 제한됩니다. ' +
+      '신청 정보는 Airtable(미국)에 저장·관리됩니다.<br>' +
       '<a href="/privacy" target="_blank" rel="noopener">개인정보 처리방침 전문 보기</a></span>' +
       '</span></label></div>' +
       '<div class="feenote" hidden>10.23 온라인은 <b>참가비 10,000원</b>이에요. ' +
-      '신청 후 입금 안내를 문자·이메일로 보내드리고, 입금이 확인되면 접수가 확정됩니다.<br>' +
+      '신청 후 입금 안내를 문자·이메일로 보내드리고, 입금이 확인되면 접수가 확정됩니다. (입금 확인을 위해 입금자명을 대조합니다.)<br>' +
       '참가비는 <b>한국 죽음문해력 지수(K-DLI) 연구</b>에 쓰이고, 신청자는 <b>다음 날 오프라인 행사에 무료로</b> 오실 수 있어요.</div>' +
       '<input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +
       '<button class="btn dark submit" type="submit">자리 잡기 →</button>' +

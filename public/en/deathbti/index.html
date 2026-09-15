@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DeathBTI · Death Literacy Connect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A playful eight-type quiz that gets Koreans talking about death — and a look at how we designed it to stay statistically fair.">
+<meta name="theme-color" content="#2CB8DB">
+<meta property="og:title" content="DeathBTI · How we got Koreans to talk about death">
+<meta property="og:description" content="Eight characters, one grid, 200,000 simulated runs. A public-engagement tool by Death Literacy Connect.">
+<meta property="og:image" content="/deathbti/cards/cover.jpg">
+<meta property="og:url" content="https://death-literacy-connect.kr/en/deathbti">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ko" href="https://death-literacy-connect.kr/deathbti">
+<link rel="alternate" hreflang="en" href="https://death-literacy-connect.kr/en/deathbti">
+<link rel="icon" type="image/png" href="/dsym-black.png">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="/base.css">
+<style>
+  .top{padding:80px 0 66px}
+  .top .eyebrow{font-size:12px;font-weight:800;letter-spacing:5px;color:var(--sky);margin-bottom:22px}
+  .top h1{font-size:clamp(36px,5.6vw,68px);font-weight:900;letter-spacing:-2.4px;line-height:1.08;margin-bottom:22px;max-width:17ch}
+  .top h1 .sun{background:var(--sun);padding:0 10px;border-radius:6px;display:inline-block;transform:rotate(-1deg)}
+  .top .lead{font-size:clamp(16px,1.9vw,19px);color:rgba(0,0,0,.66);line-height:1.8;max-width:680px;margin-bottom:26px}
+  .kv{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .kv span{font-size:13px;font-weight:700;padding:9px 16px;border:1.5px solid rgba(0,0,0,.16);border-radius:999px}
+
+  section{padding:72px 0}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:4px;color:rgba(0,0,0,.45);margin-bottom:12px}
+  h2.big{font-size:clamp(26px,3.8vw,42px);font-weight:900;letter-spacing:-1.5px;line-height:1.16;margin-bottom:16px}
+  h2.big .sky{color:var(--sky)}
+  .lead{font-size:16px;color:rgba(0,0,0,.63);line-height:1.8;max-width:740px;margin-bottom:38px}
+
+  .why{background:var(--ink);color:var(--paper)}
+  .why .eyebrow{color:var(--sun)}
+  .why .lead{color:rgba(255,255,255,.68)}
+  .why h2.big .sky{color:var(--sky)}
+  .quote{border-left:3px solid var(--sun);padding:6px 0 6px 22px;font-size:clamp(17px,2.2vw,23px);font-weight:700;line-height:1.6;letter-spacing:-.4px;max-width:760px}
+  .quote small{display:block;margin-top:12px;font-size:13px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:0}
+
+  .grid-explain{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  @media(max-width:900px){.grid-explain{grid-template-columns:1fr;gap:28px}}
+  .axis{border:1.5px solid rgba(0,0,0,.12);border-radius:20px;padding:26px 24px;margin-bottom:14px}
+  .axis .t{font-size:16px;font-weight:900;margin-bottom:10px}
+  .axis .t em{font-style:normal;color:var(--sky)}
+  .axis .d{font-size:14px;color:rgba(0,0,0,.6);line-height:1.75}
+  .axis ul{margin:12px 0 0 18px;font-size:13.5px;color:rgba(0,0,0,.66);line-height:1.9}
+
+  .matrix{width:100%;border-collapse:separate;border-spacing:6px}
+  .matrix th{font-size:12px;font-weight:800;letter-spacing:1px;color:rgba(0,0,0,.5);padding:6px}
+  .matrix td{background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:14px;padding:14px 12px;font-size:13px;font-weight:800;text-align:center;line-height:1.4}
+  .matrix td small{display:block;font-weight:500;color:rgba(0,0,0,.5);margin-top:4px;font-size:11.5px}
+
+  .types{background:rgba(44,184,219,.08)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .tc{background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+  .tc img{width:100%;aspect-ratio:1080/1350;object-fit:cover;display:block;border-bottom:1px solid rgba(0,0,0,.08)}
+  .tc .tx{padding:20px 20px 22px}
+  .tc .no{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--sky);margin-bottom:7px}
+  .tc .nm{font-size:18px;font-weight:900;letter-spacing:-.5px;margin-bottom:4px;line-height:1.25}
+  .tc .ko{font-size:12.5px;color:rgba(0,0,0,.45);margin-bottom:10px}
+  .tc .dd{font-size:13.5px;color:rgba(0,0,0,.63);line-height:1.7}
+  .tc .gloss{margin-top:10px;font-size:12.5px;color:rgba(0,0,0,.5);line-height:1.65;border-top:1px dashed rgba(0,0,0,.14);padding-top:10px}
+  .note{margin-top:30px;font-size:14px;color:rgba(0,0,0,.58);line-height:1.8}
+
+  .rigor .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .step{border:1.5px solid rgba(0,0,0,.12);border-radius:18px;padding:26px 24px}
+  .step .n{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--sky);margin-bottom:10px}
+  .step .t{font-size:16px;font-weight:900;margin-bottom:8px;line-height:1.35}
+  .step .d{font-size:13.5px;color:rgba(0,0,0,.6);line-height:1.75}
+  .metric{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+  .metric div{border:1.5px solid rgba(0,0,0,.14);border-radius:16px;padding:18px 22px}
+  .metric .v{font-size:26px;font-weight:900;letter-spacing:-1px;color:var(--sky);line-height:1}
+  .metric .l{font-size:12.5px;color:rgba(0,0,0,.55);margin-top:7px}
+
+  .band{background:var(--sky);text-align:center}
+  .band h2{font-size:clamp(26px,4vw,42px);font-weight:900;letter-spacing:-1.5px;margin-bottom:14px}
+  .band p{font-size:15px;color:rgba(0,0,0,.68);line-height:1.8;max-width:620px;margin:0 auto 30px}
+  .band .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/en"><img src="/logo-en.png" alt="Death Literacy Connect"></a>
+    <div class="tabs">
+      <a href="/en">About</a>
+      <a href="/en/deathtival">Deathtival</a>
+      <a class="on" href="/en/deathbti">DeathBTI</a>
+      <a href="/deathbti" title="한국어">KO</a>
+    </div>
+    <a class="cta" href="mailto:the.last.hello15@gmail.com">Get in touch →</a>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">PUBLIC ENGAGEMENT TOOL</div>
+    <h1>How do you get people to<br><span class="sun">talk about death?</span><br>Make them laugh first.</h1>
+    <div class="lead">
+      <b>DeathBTI</b> is a ten-question quiz that sorts you into one of eight characters you meet at a Korean funeral.
+      It looks like a meme. It is actually a conversation opener — and it is our most-shared piece of work.
+    </div>
+    <div class="kv">
+      <span>10 questions</span>
+      <span>8 character types</span>
+      <span>Live since Sept 2026</span>
+      <span>Korean only</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn dark" href="/deathbti">Try the Korean version →</a>
+      <a class="btn ghost" href="#types">See the eight types</a>
+    </div>
+  </div>
+</header>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">WHY A QUIZ</div>
+    <h2 class="big">A survey asks people to be honest.<br>A quiz lets them be <span class="sky">recognised.</span></h2>
+    <div class="lead">
+      More than half of Korean adults have never talked about death with their family. Asking them directly does not work —
+      the subject is closed before it opens. So we stopped asking, and started describing.
+    </div>
+    <div class="quote">
+      "Not a survey. A personality quiz — one people share while laughing."
+      <small>— the brief that reset the whole project, Sept 2026</small>
+    </div>
+    <div class="lead" style="margin-top:34px;margin-bottom:0">
+      The design rule that followed: the success metric is <b>not</b> how many people finish the quiz.
+      It is how many press <b>"send this to your family"</b> at the end. Every other decision was made to serve that one number.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">HOW IT WORKS</div>
+    <h2 class="big">Eight characters first.<br>The grid came <span class="sky">afterwards.</span></h2>
+    <div class="lead">
+      We tried drawing the matrix first and naming the boxes. Every attempt produced four good characters and four
+      forced ones. So we reversed it — wrote eight people we had actually met at funerals, then asked what axes explained them.
+      The grid that fell out was <b>four resources × two timings</b>.
+    </div>
+    <div class="grid-explain">
+      <div>
+        <div class="axis">
+          <div class="t">Axis 1 · <em>What do you reach for?</em></div>
+          <div class="d">The resource a person leans on when death enters the room.</div>
+          <ul>
+            <li><b>Knowledge</b> — facts, procedures, what is correct</li>
+            <li><b>Relationships</b> — people, presence, keeping others going</li>
+            <li><b>Experience</b> — memory, feeling, what you have lived</li>
+            <li><b>Action</b> — the body moves before the mind does</li>
+          </ul>
+        </div>
+        <div class="axis">
+          <div class="t">Axis 2 · <em>When do you engage?</em></div>
+          <div class="d">Long before it happens, or only in the moment.</div>
+          <ul>
+            <li><b>Ahead of time</b> — prepares, imagines, rehearses</li>
+            <li><b>In the moment</b> — responds when it actually arrives</li>
+          </ul>
+        </div>
+        <div class="note" style="margin-top:0">
+          Users never see the axes. They see a character — because "you are the one who ends up in the kitchen"
+          travels further than "you scored high on relational-responsive."
+        </div>
+      </div>
+      <div>
+        <table class="matrix">
+          <tr><th></th><th>AHEAD OF TIME</th><th>IN THE MOMENT</th></tr>
+          <tr><th>KNOWLEDGE</th>
+            <td>The Funeral Planner<small>has picked the portrait</small></td>
+            <td>The Condolence Researcher<small>googles the envelope amount</small></td></tr>
+          <tr><th>RELATIONSHIPS</th>
+            <td>The Subject Changer<small>ends death talk in 0.5s</small></td>
+            <td>The One in the Kitchen<small>somehow always washing up</small></td></tr>
+          <tr><th>EXPERIENCE</th>
+            <td>The Theorist<small>watched every documentary</small></td>
+            <td>The Late Griever<small>fine by day, undone at 3am</small></td></tr>
+          <tr><th>ACTION</th>
+            <td>Life-Is-Short Splurger<small>books a flight after a funeral</small></td>
+            <td>Yukgaejang Seconds<small>grief and hunger, kept separate</small></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="types" id="types">
+  <div class="wrap">
+    <div class="eyebrow">THE EIGHT</div>
+    <h2 class="big">Everyone recognises someone.<br>Usually themselves.</h2>
+    <div class="lead">
+      Each result is a single illustrated card, built in three beats: <b>the sting</b> (you have been seen),
+      <b>the turn</b> (what looked like a flaw is care), <b>one step</b> (something small to do today).
+      Cards are shown as published — in Korean.
+    </div>
+    <div class="cards">
+
+      <div class="tc"><img src="/deathbti/cards/type1.jpg" alt="The Condolence Researcher">
+        <div class="tx"><div class="no">TYPE 01 · KNOWLEDGE × IN THE MOMENT</div>
+          <div class="nm">The Condolence Researcher</div><div class="ko">조의금 리서처</div>
+          <div class="dd">Hears of a death and opens a search bar first: how much goes in the envelope, what to wear, how many bows.</div>
+          <div class="gloss"><b>The turn:</b> you are afraid of hurting someone by getting it wrong. Rude people never bother to look it up.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type2.jpg" alt="The Funeral Planner">
+        <div class="tx"><div class="no">TYPE 02 · KNOWLEDGE × AHEAD OF TIME</div>
+          <div class="nm">The Funeral Planner</div><div class="ko">내 장례식 기획자</div>
+          <div class="dd">Has already chosen the portrait photo, and probably the playlist too.</div>
+          <div class="gloss"><b>The turn:</b> the quietest possible kindness to the people who will be left behind.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type3.jpg" alt="The Subject Changer">
+        <div class="tx"><div class="no">TYPE 03 · RELATIONSHIPS × AHEAD OF TIME</div>
+          <div class="nm">The Subject Changer</div><div class="ko">화제전환의 달인</div>
+          <div class="dd">Shuts down any talk of death within half a second. "Don't say that."</div>
+          <div class="gloss"><b>The turn:</b> you cannot listen because you love too much. Indifferent people just nod along.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type4.jpg" alt="The One in the Kitchen">
+        <div class="tx"><div class="no">TYPE 04 · RELATIONSHIPS × IN THE MOMENT</div>
+          <div class="nm">The One in the Kitchen</div><div class="ko">상갓집 실세</div>
+          <div class="dd">Comes to, and finds themselves washing dishes at the funeral hall.</div>
+          <div class="gloss"><b>The turn:</b> you move grief with your hands. Rooms you are in keep running. <b>But who looks after you?</b></div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type5.jpg" alt="The Late Griever">
+        <div class="tx"><div class="no">TYPE 05 · EXPERIENCE × IN THE MOMENT</div>
+          <div class="nm">The Late Griever</div><div class="ko">슬픔 지각생</div>
+          <div class="dd">Composed all day. Falls apart at three in the morning.</div>
+          <div class="gloss"><b>The turn:</b> grief that arrives late is not shallow. You take longer because you go deeper.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type6.jpg" alt="The Theorist">
+        <div class="tx"><div class="no">TYPE 06 · EXPERIENCE × AHEAD OF TIME</div>
+          <div class="nm">The Theorist</div><div class="ko">죽음 이론가</div>
+          <div class="dd">Has seen every documentary on dying. Has had zero conversations about their own family.</div>
+          <div class="gloss"><b>The turn:</b> rehearsing is not running away. Prepared people are the ones who stay standing.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type7.jpg" alt="Yukgaejang Seconds">
+        <div class="tx"><div class="no">TYPE 07 · ACTION × IN THE MOMENT</div>
+          <div class="nm">Yukgaejang Seconds</div><div class="ko">육개장 두 그릇</div>
+          <div class="dd">Keeps grief and hunger in separate compartments — and goes back for a second bowl.</div>
+          <div class="gloss"><b>Yukgaejang</b> is the spicy beef soup served at every Korean funeral, around the clock, to everyone who comes.<br><b>The turn:</b> your body moves toward living first. That is not guilt. That is mourning.</div>
+        </div></div>
+
+      <div class="tc"><img src="/deathbti/cards/type8.jpg" alt="The Life-Is-Short Splurger">
+        <div class="tx"><div class="no">TYPE 08 · ACTION × AHEAD OF TIME</div>
+          <div class="nm">The Life-Is-Short Splurger</div><div class="ko">인생 짧다 지름신</div>
+          <div class="dd">Comes home from a funeral and books the flight.</div>
+          <div class="gloss"><b>The turn:</b> you translate death into life faster than anyone. You use grief as fuel.</div>
+        </div></div>
+
+    </div>
+    <div class="note">
+      Card art: original illustrations of <b>Arongi</b>, our calico cat mascot — a rare male tortoiseshell, roughly 1 in 3,000.
+    </div>
+  </div>
+</section>
+
+<section class="rigor">
+  <div class="wrap">
+    <div class="eyebrow">MAKING IT FAIR</div>
+    <h2 class="big">A quiz that always gives you<br>the same answer is a <span class="sky">horoscope.</span></h2>
+    <div class="lead">
+      A shareable quiz still has to be defensible. We ran <b>200,000 randomised responses</b> through the scoring engine
+      and found three biases that would have quietly broken it.
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">BIAS 01</div><div class="t">Weighted questions</div>
+        <div class="d">One question carried more weight than the rest — so the types attached to its options appeared 21% of the time while others sat at 4%. <b>Removed all weighting.</b></div></div>
+      <div class="step"><div class="n">BIAS 02</div><div class="t">Tie-break by favourite question</div>
+        <div class="d">Ties were resolved by looking at one designated question, which pushed the same four types up every time. <b>Removed the shortcut.</b></div></div>
+      <div class="step"><div class="n">BIAS 03</div><div class="t">Resource and timing entangled</div>
+        <div class="d">When a single option encoded both axes, choosing a resource dragged a timing along with it — misclassifying timing in four of eight types. <b>Measured separately.</b></div></div>
+    </div>
+    <div class="metric">
+      <div><div class="v">10.89%p → 1.43%p</div><div class="l">Spread between most and least frequent type</div></div>
+      <div><div class="v">8 / 8</div><div class="l">Types correctly recovered from designed inputs</div></div>
+      <div><div class="v">200,000</div><div class="l">Simulated runs per validation pass</div></div>
+    </div>
+    <div class="note">
+      The scoring engine is the single source of truth: one file drives the web quiz, the eight share pages and the response
+      database. It refuses to publish if validation fails — no change reaches users without passing these checks.
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Want one for your context?</h2>
+    <p>
+      DeathBTI is Korean-language only — the humour sits inside Korean funeral customs and does not survive translation.
+      But the method travels: character-first design, a measurable grid behind it, and a validation loop that blocks release.
+      If you are working on public engagement around dying, we are happy to share how it was built.
+    </p>
+    <div class="row">
+      <a class="btn dark" href="mailto:the.last.hello15@gmail.com?subject=DeathBTI%20enquiry">Email us →</a>
+      <a class="btn ghost" href="/deathbti">See it live (KO) →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Death Literacy Connect · 죽음문해력커넥트</div>
+    <div><a href="/deathbti">한국어</a> · <a href="/en">About</a> · <a href="https://instagram.com/deathliteracy_connect">@deathliteracy_connect</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+{
+  "_comment": "데스티벌 사실 정본. 여기 값을 고친 뒤 각 페이지를 고치고, scripts/check-drift.mjs 로 3개 페이지가 맞는지 확인한다. 출처 = 아베 집사님 협력제안서(구글슬라이드 13F-8zkk...).",
+  "updated": "2026-09-14",
+  "source": "아베 협력제안서 9/5판 (구글슬라이드 13F-8zkkyYgC4BlfS9lkmbHnOqrFuX3h1W5xYyfJn7fY)",
+  "facts": {
+    "day1_time": {
+      "label": "10/23 온라인 시간",
+      "ko": "10:00 – 12:30",
+      "en": "10:00 – 12:30",
+      "stale": [
+        "10:00 – 12:00",
+        "10:00–12:00",
+        "오전 10시 ~ 오후 12시"
+      ]
+    },
+    "day1_fee": {
+      "label": "10/23 온라인 참가비",
+      "ko": "10,000원",
+      "en": "KRW 10,000",
+      "stale": [
+        "참가비 무료.",
+        "무료 · 1분이면"
+      ]
+    },
+    "day2_time": {
+      "label": "10/24 오프라인 시간",
+      "ko": "14:00 – 19:00",
+      "en": "14:00 – 19:00",
+      "stale": []
+    },
+    "day2_venue": {
+      "label": "10/24 장소",
+      "ko": "북성재",
+      "en": "Bukseongjae",
+      "stale": []
+    },
+    "session2_speaker": {
+      "label": "S2 연사에 하정화 포함",
+      "ko": "하정화",
+      "en": "Ha Jeong-hwa",
+      "stale": []
+    },
+    "booth_booktalk": {
+      "label": "오프라인 커피 세션 = 북토크(송인주)",
+      "ko": "북토크",
+      "en": "Book talk",
+      "stale": [
+        "데스카페 w. 카페사담",
+        "Death Cafe"
+      ]
+    },
+    "audience_open": {
+      "label": "참여 대상에 일반 포함",
+      "ko": "누구나",
+      "en": "anyone",
+      "stale": []
+    },
+    "brand_spelling": {
+      "label": "행사 영문 철자",
+      "ko": "DEATHTIVAL",
+      "en": "Deathtival",
+      "stale": [
+        "deathival",
+        "Deathival",
+        "DEATHIVAL"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "path": "public/index.html",
+      "lang": "ko",
+      "role": "한글 홈 (데스티벌 요약 섹션 포함)",
+      "facts": [
+        "day1_time",
+        "day1_fee",
+        "day2_time",
+        "day2_venue",
+        "session2_speaker",
+        "booth_booktalk",
+        "audience_open",
+        "brand_spelling"
+      ]
+    },
+    {
+      "path": "public/deathtival/index.html",
+      "lang": "ko",
+      "role": "한글 행사 상세",
+      "facts": [
+        "day1_time",
+        "day1_fee",
+        "day2_time",
+        "day2_venue",
+        "session2_speaker",
+        "booth_booktalk",
+        "audience_open"
+      ]
+    },
+    {
+      "path": "public/en/index.html",
+      "lang": "en",
+      "role": "영문 About (행사 요약 포함)",
+      "facts": [
+        "day1_time",
+        "day2_time",
+        "day2_venue",
+        "brand_spelling"
+      ]
+    },
+    {
+      "path": "public/en/deathtival/index.html",
+      "lang": "en",
+      "role": "영문 행사 상세",
+      "facts": [
+        "day1_time",
+        "day1_fee",
+        "day2_time",
+        "day2_venue",
+        "session2_speaker",
+        "booth_booktalk",
+        "brand_spelling"
+      ]
+    },
+    {
+      "path": "public/en/deathbti/index.html",
+      "lang": "en",
+      "role": "영문 죽BTI 쇼케이스 (기관 대상 · 진단 미동작)",
+      "facts": [
+        "brand_spelling"
+      ]
+    }
+  ],
+  "translationPairs": [
+    {
+      "ko": "public/index.html",
+      "en": "public/en/index.html"
+    },
+    {
+      "ko": "public/deathtival/index.html",
+      "en": "public/en/deathtival/index.html"
+    },
+    {
+      "ko": "public/deathbti/index.html",
+      "en": "public/en/deathbti/index.html"
+    }
+  ]
+}
